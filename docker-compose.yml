@@ -6,6 +6,11 @@ services:
             file: py/docker-compose.yml
             service: gunicorn
 
+    node:
+      extends:
+        file: js/docker-compose.yml
+        service: node
+
     nginx:
         image: nginx:1.17.8
         ports:
@@ -15,7 +20,7 @@ services:
             - ./store/static/files:/static:ro
         links:
             - gunicorn
-            # - node
+            - node
 
     graphite:
         image: graphiteapp/graphite-statsd:1.1.5-12

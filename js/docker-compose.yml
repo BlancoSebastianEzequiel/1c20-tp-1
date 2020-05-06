@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  node:
+    build: .
+    command: yarn dev
+    image: node
+    container_name: node
+    ports:
+      - 5000:5000

@@ -112,5 +112,5 @@ store/static/files/
 
 node_modules
 .DS_Store
-.idea/
+.idea
 .vscode
