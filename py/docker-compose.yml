@@ -3,6 +3,7 @@ version: '2'
 services:
  gunicorn:
   build: .
+  command: sh scripts/start.sh
   image: gunicorn-img
   container_name: gunicorn
   ports:
