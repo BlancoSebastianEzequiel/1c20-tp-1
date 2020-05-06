@@ -1,6 +1,11 @@
 version: '2'
 
 services:
+    gunicorn:
+        extends:
+            file: py/docker-compose.yml
+            service: gunicorn
+
     nginx:
         image: nginx:1.17.8
         ports:
@@ -10,7 +15,7 @@ services:
             - ./store/static/files:/static:ro
         links:
             - gunicorn
-            - node
+            # - node
 
     graphite:
         image: graphiteapp/graphite-statsd:1.1.5-12

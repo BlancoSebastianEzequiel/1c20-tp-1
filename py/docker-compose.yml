@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+ gunicorn:
+  build: .
+  image: gunicorn-img
+  container_name: gunicorn
+  ports:
+   - '4000:4000'
