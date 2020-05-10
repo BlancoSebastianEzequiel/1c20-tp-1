@@ -4,7 +4,5 @@ services:
  gunicorn:
   build: .
   command: sh scripts/start.sh
-  image: gunicorn-img
-  container_name: gunicorn
   ports:
-   - '4000:4000'
+   - 4000:4000
