@@ -5,4 +5,4 @@ services:
   build: .
   command: sh scripts/start.sh
   ports:
-   - 4000:4000
+   - 4000
