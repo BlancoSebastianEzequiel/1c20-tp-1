@@ -28,7 +28,7 @@ config:
     
 
 scenarios:
-  - name: Root (/)
+  - name: Ping (/ping)
     flow:
       - get:
-          url: '/'
+          url: '/ping'
