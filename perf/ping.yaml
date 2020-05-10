@@ -1,5 +1,12 @@
 config:
   environments:
+    node-replicated:
+      target: 'http://localhost:5555/node-replicated/'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node-replicated"
     node:
       target: 'http://localhost:5555/node/'
       plugins:
