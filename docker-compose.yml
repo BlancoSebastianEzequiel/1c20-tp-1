@@ -7,9 +7,9 @@ services:
             service: gunicorn
 
     node:
-      extends:
-        file: js/docker-compose.yml
-        service: node
+        extends:
+            file: js/docker-compose.yml
+            service: node
 
     nginx:
         image: nginx:1.17.8
