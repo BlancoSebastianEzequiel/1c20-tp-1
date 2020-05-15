@@ -13,7 +13,7 @@ router.get('/heavy', (req, res) => {
         if (now - start >= time) break;
     }
 
-    res.send(`node - heavy: ${time}`);
+    res.send(`node - heavy: ${time} - HOST: ${process.env.HOSTNAME}`);
 })
 
 module.exports = router;

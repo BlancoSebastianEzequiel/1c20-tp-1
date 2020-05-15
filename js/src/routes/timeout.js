@@ -6,7 +6,7 @@ const DEFAULT_TIMEOUT = 5 * SECOND;
 const router = Router();
 router.get('/timeout', (req, res) => {
     const time = (req.query.t && req.query.t * SECOND) || DEFAULT_TIMEOUT;
-    setTimeout(() => res.send(`node - timeout: ${time}`), time);
+    setTimeout(() => res.send(`node - timeout: ${time} - HOST: ${process.env.HOSTNAME}`), time);
 });
 
 module.exports = router;
