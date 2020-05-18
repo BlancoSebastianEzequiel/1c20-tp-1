@@ -5,6 +5,9 @@
     docker-compose up --build --scale node=3
 ```
 
+## Documentation
+- [ver aqui](https://drive.google.com/open?id=1y4DLns4AirKSDRyUVrAS-Bx_XNp3jf4V)
+
 > **La fecha de entrega para el informe y el código es el jueves 28/05** :bangbang:
 
 La forma de entrega será crear un canal **privado** en Slack (llamado como el grupo) con todos los miembros del grupo y todos los docentes, y poner ahí un link al repositorio con el código (en caso de ser privado, invitar también a todos los docentes) y el informe (o avisar si está en el repositorio).
