@@ -1,6 +1,14 @@
 version: '2'
 
 services:
+    bbox:
+        image: arqsoft/bbox:202001.1
+        volumes:
+        - ./config.properties:/opt/bbox/config.properties
+        ports:
+        - 9090
+        - 9091
+
     gunicorn:
         extends:
             file: py/docker-compose.yml
