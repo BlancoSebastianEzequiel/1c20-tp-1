@@ -1,0 +1,31 @@
+config:
+  environments:
+    bbox_service_1:
+      target: 'http://localhost:5555/1c20-tp1_bbox_1/'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-bbox_service_1"
+    bbox_service_2:
+      target: 'http://localhost:5555/1c20-tp1_bbox_2/'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-bbox_service_2"
+
+  pool: 50
+
+  phases:
+    - name: clean
+      duration: 60
+      arrivalRate: 0 # requests per second
+      
+
+
+scenarios:
+  - name: Ping (/)
+    flow:
+      - get:
+          url: '/'

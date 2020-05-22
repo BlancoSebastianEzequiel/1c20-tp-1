@@ -1,14 +1,14 @@
 config:
   environments:
     bbox_service_1:
-      target: 'http://localhost:5555/bbox_service_1/'
+      target: 'http://localhost:5555/1c20-tp1_bbox_1/'
       plugins:
         statsd:
           host: localhost
           port: 8125
           prefix: "artillery-bbox_service_1"
     bbox_service_2:
-      target: 'http://localhost:5555/bbox_service_2/'
+      target: 'http://localhost:5555/1c20-tp1_bbox_2/'
       plugins:
         statsd:
           host: localhost
@@ -18,10 +18,19 @@ config:
   pool: 50
 
   phases:
-    - name: Ramp_1
-      duration: 100
+    - name: Startup
+      duration: 15
+      arrivalRate: 1 # requests per second
+    - name: Step1
+      duration: 60
       arrivalRate: 5 # requests per second
-      rampTo: 100
+    - name: Step2
+      duration: 60
+      arrivalRate: 30 # requests per second
+    - name: clean
+      duration: 120
+      arrivalRate: 1 # requests per second
+      
 
 
 scenarios:
