@@ -22,16 +22,31 @@ config:
           port: 8125
           prefix: "artillery-gunicorn"
 
-  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+  pool: 1000 # All HTTP requests from all virtual users will be sent over the same connections
 
   phases:
     - name: Ramp
       duration: 30
-      arrivalRate: 5
-      rampTo: 30
+      arrivalRate: 0
+      rampTo: 150
     - name: Plain
-      duration: 120
+      duration: 40
       arrivalRate: 30
+    - name: NoOp_1
+      arrivalRate: 0
+      duration: 20
+    - name: Burst_1
+      arrivalRate: 100
+      duration: 5
+    - name: NoOp_2
+      arrivalRate: 0
+      duration: 15
+    - name: Burst_2
+      arrivalRate: 30
+      duration: 10
+    - name: NoOp_3
+      arrivalRate: 0
+      duration: 10
     
 
 scenarios:
